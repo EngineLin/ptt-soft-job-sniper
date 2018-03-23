@@ -35,6 +35,8 @@ app.use(historyApiFallback());
 app.use(serve(path.join(__dirname, 'dist')));
 
 app.on('error', err => console.log(`伺服器開啟錯誤: ${err}`));
-module.exports = app.listen(process.env.PORT || 3003, () =>
+
+const PORT = process.env.PORT || 3003
+module.exports = app.listen(PORT, () =>
   console.log('伺服器已經成功開啟。')
 );

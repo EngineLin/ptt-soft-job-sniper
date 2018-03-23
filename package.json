@@ -1,7 +1,7 @@
 {
   "name": "pttjobsniper",
   "version": "1.0.0",
-  "description": "自動爬取 PTT soft-job 的工作機會，自動寄信給會員的平台。",
+  "description": "自動爬取 Ptt soft_job 的工作機會，自動寄信給會員的系統。",
   "author": "linengine <linengine@gmail.com>",
   "private": true,
   "scripts": {
