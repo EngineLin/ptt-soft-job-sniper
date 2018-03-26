@@ -50,7 +50,7 @@ const sendCheckmail = email => {
     { email, exp: Math.floor(Date.now() / 1000) + 60 * 10 },
     secret
   );
-  const tokenURL = 'https://localhost:3003/api/mail?token=' + token;
+  const tokenURL = 'https://ptt-soft-job-sniper.herokuapp.com/api/mail?token=' + token;
 
   const options = {
     from: 'linengine@gmail.com',
