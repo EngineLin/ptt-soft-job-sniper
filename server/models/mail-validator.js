@@ -4,10 +4,10 @@ const db = require('../config/db');
 const { secret } = require('../config/base');
 
 // 建立該資料頁面的 schema 格式
-const schema = {
+const schemaOfEmail = {
   email: String,
 };
-const Email = db.model('Email', schema);
+const Email = db.model('Email', schemaOfEmail);
 
 /* --- POST --- */
 const postEmailValidatorByEmail = async obj => {
@@ -56,10 +56,11 @@ const sendCheckmail = email => {
     from: 'linengine@gmail.com',
     to: email,
     subject: 'Ptt Soft_job Sniper 信箱驗證',
-    html:
-      "<h2>您好，這是 Ptt Soft_job Sniper 的信箱驗證信件<h2><p>請點選驗證碼，加入服務，快速獲得工作資訊： <a href='" +
-      tokenURL +
-      "'>您的驗證碼</a></p><p>如果您沒有加入該服務的印象，請無視該信件。</p>",
+    html: `
+      <h2>您好，這是 Ptt Soft_job Sniper 的信箱驗證信件<h2>
+      <p>請點選驗證碼，加入服務，快速獲得工作資訊： <a href=${tokenURL}>您的驗證碼</a></p>
+      <p>如果您沒有加入該服務的印象，請無視該信件。</p>
+    `,
   };
 
   transporter.sendMail(options, (err, info) => {
